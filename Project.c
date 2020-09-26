@@ -19,8 +19,8 @@ void randwait(int secs);
 // waitingRoom Limits the # of patients allowed to enter the waiting room at one time
 sem_t waitingRoom;
 
-// bestodentChair ensures mutually exclusive access to the chair
-sem_t bestodentChair;
+// chairs ensures mutually exclusive access to the chair
+sem_t chairs;
 
 // dentistFree will be free until a patient arrives
 sem_t dentistFree;
@@ -40,7 +40,7 @@ int Number[MAX_PATIENTS];
 
 printf("Enter the number of Patients : ");
  scanf("%d",&numPatients) ;
-printf("Enter the number of Bestodent Chairs : "); 
+printf("Enter the number of Chairs : "); 
 scanf("%d",&numChairs);
 
 // Make sure the number of threads is less than the number of patients we can support
@@ -56,7 +56,7 @@ Number[i] = i;
 
 // Initialize the semaphores with initial values…
 sem_init(&waitingRoom, 0, numChairs);
-sem_init(&bestodentChair, 0, 1);
+sem_init(&chairs, 0, 1);
 sem_init(&dentistFree, 0, 0);
 sem_init(&seatBelt, 0, 0);
 
@@ -94,7 +94,7 @@ sem_wait(&waitingRoom);
 printf("Patient %d entering waiting room.\n", num);
 
 // Wait for the bestodent chair to become free.
-sem_wait(&bestodentChair);
+sem_wait(&chairs);
 
 // The chair is free so give up your spot in the waiting room.
 sem_post(&waitingRoom);
@@ -107,7 +107,7 @@ sem_post(&dentistFree);
 sem_wait(&seatBelt);
 
 // Give up the chair.
-sem_post(&bestodentChair);
+sem_post(&chairs);
 printf("Patient %d leaving clinic\n", num);
 }
 
