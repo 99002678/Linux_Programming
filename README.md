@@ -16,6 +16,7 @@ There is a dentist running clinic consists of waiting room with n chairs. If the
 ## Compiling
 
  Use Ubuntu 18.04 or later versions to compile this program
+ 
  gcc project.c -pthread
  
  ## To Run
