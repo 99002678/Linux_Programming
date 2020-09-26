@@ -8,3 +8,22 @@
 
 ## Mini Project
 Dentists and Patients
+
+## Problem Statement
+
+There is a dentist running clinic consists of waiting room with n chairs. If there are no patients, the dentist takes break. While dentist is free and patient arrives the clinic he/she asks for service. If dentist is busy in checkup then patients sits in the waiting room if chairs are free, if all chairs are occupied then patient takes appointment and leaves the clinic. Once all the patients are treated dentist leaves for home.
+
+## Compiling
+
+ Use Ubuntu 18.04 or later versions to compile this program
+ gcc project.c -pthread
+ 
+ ## To Run
+ 
+ ./a.out
+
+
+
+
+
+
