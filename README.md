@@ -4,5 +4,7 @@
 
 ![cppcheck-action](https://github.com/99002678/Linux_Programming/workflows/cppcheck-action/badge.svg)
 
+![C/C++ CI](https://github.com/99002678/Linux_Programming/workflows/C/C++%20CI/badge.svg?branch=master)
+
 ## Mini Project
 Dentists and Patients
