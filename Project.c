@@ -93,7 +93,7 @@ printf("Patient %d arrived at clinic\n", num);
 sem_wait(&waitingRoom);
 printf("Patient %d entering waiting room.\n", num);
 
-// Wait for the bestodent chair to become free.
+// Wait for the chair to become free.
 sem_wait(&chairs);
 
 // The chair is free so give up your spot in the waiting room.
